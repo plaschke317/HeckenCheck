@@ -210,7 +210,7 @@ function App() {
     <div className={containerClasses}>
       <div className={cardClasses}>
           <img
-            src="images/HeckenCheck-Logo-1536x650.png"
+            src="./images/HeckenCheck-Logo-1536x650.png"
             alt="HeckenCheck Logo"
             className="w-19 h-19 object-contain"
           />
