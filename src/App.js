@@ -210,7 +210,7 @@ function App() {
     <div className={containerClasses}>
       <div className={cardClasses}>
           <img
-            src="${process.env.PUBLIC_URL}/images/HeckenCheck-Logo-1536x650.png"
+            src="images/HeckenCheck-Logo-1536x650.png"
             alt="HeckenCheck Logo"
             className="w-19 h-19 object-contain"
           />
@@ -288,7 +288,7 @@ function App() {
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
             ) : (
-              <img src="${process.env.PUBLIC_URL}/images/Symbol-weiss.png" alt="Symbol Hanfblatt weiss" className="w-5 h-5 mx-1 object-contain" />
+              <img src="images/Symbol-weiss.png" alt="Symbol Hanfblatt weiss" className="w-5 h-5 mx-1 object-contain" />
             )}
             {loading ? 'Checke die Hecke...' : 'HeckenCheck starten'}
           </button>
