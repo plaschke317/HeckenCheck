@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useRef } from 'react';
 import { ImageUp, Eye, Cigarette, Droplets, Flame, Wind } from 'lucide-react'; // Icons for visual appeal, added Leaf, Droplet, Sun, Wind
 import responses from './responses';
 import './App.css';
 import './index.css';
+
 
 
 function App() {
@@ -156,7 +158,7 @@ function App() {
   // Function to determine emoji based on plantScore
   const getScoreEmoji = (score) => {
     if (score >= 0.0 && score <= 0.9) {
-      return '💩'; // Poo emoji for very low score
+      return '💩💩💩'; // Poo emoji for very low score
     } else if (score >= 1.0 && score <= 1.9) {
       return '🥦';
     } else if (score >= 2.0 && score <= 2.9) {
@@ -174,7 +176,7 @@ function App() {
     } else if (score >= 8.0 && score <= 8.9) {
       return '🥦🥦🥦🥦🥦🥦🥦🥦';
     } else if (score >= 9.0 && score <= 10.0) {
-      return '🥦🥦🥦🥦🥦🥦🥦🥦🥦🥦'; // 10 Broccolis for high scores
+      return '🥦🥦🥦🥦🥦🥦🥦🥦🥦'; // 9 Broccolis for almost high scores
     }
     return ''; // Default empty string
   };
@@ -185,6 +187,11 @@ function App() {
   const cardClasses = "bg-white p-6 rounded-xl shadow-lg w-full max-w-2xl transform transition-all duration-300 hover:scale-[1.01]";
   const buttonClasses = "mt-6 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300 flex items-center justify-center space-x-2";
   const selectClasses = "w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 cursor-pointer text-gray-800"; // Select text explicitly dark for white background
+  const zielRef = useRef(null);
+
+  const scrollToZiel = () => {
+    zielRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const DetailScoreDisplay = ({ label, score, icon: Icon }) => (
     <div className="flex items-center space-x-2 mb-2"> {/* Main flex container for label, scale, score */}
@@ -210,12 +217,13 @@ function App() {
     <div className={containerClasses}>
       <div className={cardClasses}>
           <img
-            src="./images/HeckenCheck-Logo-1536x650.png"
+            src="./images/HeckenCheck-Logo-1000x600.png"
             alt="HeckenCheck Logo"
-            className="w-19 h-19 object-contain"
+            className="object-contain cursor-pointer hover:scale-[1.05]"
+            onClick={scrollToZiel}
           />
         <h1 className="text-4xl font-extrabold text-center text-green-800 mb-6 flex items-center justify-center space-x-3 font-sans">
-          <span>Bud oder Blatt? <br/>Cali-Ott oder Straßenschrott?</span>
+          <span><br/>Bud oder Blatt? <br/>Cali-Ott oder Straßenschrott?</span>
         </h1>
         <h1 className="text-4xl font-extrabold text-center text-green-800 mb-6 flex items-center justify-center space-x-3 font-sans">
           <span>HeckenCheck klärt das!</span>
@@ -226,7 +234,7 @@ function App() {
         </p>
 
         {/* Image Upload Section */}
-        <div className="mb-6 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+        <div ref={zielRef} className="mb-6 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center bg-gray-50 hover:shadow-lg hover:shadow-grey-200 hover:bg-gray-100 transition-colors duration-200">
           <label htmlFor="image-upload" className="cursor-pointer flex flex-col items-center justify-center">
             {imageUrl ? (
               <img src={imageUrl} alt="Hochgeladene Pflanze" className="max-h-64 object-contain rounded-lg shadow-md mb-4" />
@@ -288,7 +296,7 @@ function App() {
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
             ) : (
-              <img src="images/Symbol-weiss.png" alt="Symbol Hanfblatt weiss" className="w-5 h-5 mx-1 object-contain" />
+              <img src="./images/Symbol-weiss.png" alt="Symbol Hanfblatt weiss" className="w-5 h-5 mx-1 object-contain" />
             )}
             {loading ? 'Checke die Hecke...' : 'HeckenCheck starten'}
           </button>
