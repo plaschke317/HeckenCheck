@@ -187,12 +187,15 @@ function App() {
   const cardClasses = "bg-white p-6 rounded-xl shadow-lg w-full max-w-2xl transform transition-all duration-300 hover:scale-[1.01]";
   const buttonClasses = "mt-6 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold rounded-lg shadow-md hover:from-green-600 hover:to-teal-700 transition-all duration-300 flex items-center justify-center space-x-2";
   const selectClasses = "w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 cursor-pointer text-gray-800"; // Select text explicitly dark for white background
-  const zielRef = useRef(null);
 
-  const scrollToZiel = () => {
-    zielRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // Referenzen auto scroll
+  const ratingRef = useRef(null);
+  const uploadRef = useRef(null);
 
+  const scrollToUpload = () => uploadRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToRating = () => ratingRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+  // Main design rating container
   const DetailScoreDisplay = ({ label, score, icon: Icon }) => (
     <div className="flex items-center space-x-2 mb-2"> {/* Main flex container for label, scale, score */}
       {/* Label part */}
@@ -220,7 +223,7 @@ function App() {
             src="./images/HeckenCheck-Logo-1000x600.png"
             alt="HeckenCheck Logo"
             className="object-contain cursor-pointer hover:scale-[1.05]"
-            onClick={scrollToZiel}
+            onClick={scrollToUpload}
           />
         <h1 className="text-4xl font-extrabold text-center text-green-800 mb-6 flex items-center justify-center space-x-3 font-sans">
           <span><br/>Bud oder Blatt? <br/>Cali-Ott oder Straßenschrott?</span>
@@ -234,7 +237,7 @@ function App() {
         </p>
 
         {/* Image Upload Section */}
-        <div ref={zielRef} className="mb-6 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center bg-gray-50 hover:shadow-lg hover:shadow-grey-200 hover:bg-gray-100 transition-colors duration-200">
+        <div ref={uploadRef} className="mb-6 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center bg-gray-50 hover:shadow-lg hover:shadow-grey-200 hover:bg-gray-100 transition-colors duration-200">
           <label htmlFor="image-upload" className="cursor-pointer flex flex-col items-center justify-center">
             {imageUrl ? (
               <img src={imageUrl} alt="Hochgeladene Pflanze" className="max-h-64 object-contain rounded-lg shadow-md mb-4" />
@@ -286,7 +289,7 @@ function App() {
 
         {/* Action Button */}
         <button
-          onClick={generateRating}
+          onClick={() => {generateRating(); setTimeout(scrollToRating, 1750);}}
           className={buttonClasses}
           disabled={!selectedImage || loading} // Disable button while loading
         >
@@ -310,7 +313,7 @@ function App() {
 
           {/* Display of Random Plant Score */}
           {plantScore > 0 && ( // Only show after a score has been generated
-            <div className="mt-8 bg-teal-50 p-6 rounded-xl shadow-inner border-t-4 border-teal-400">
+            <div ref={ratingRef} className="mt-8 bg-teal-50 p-6 rounded-xl shadow-inner border-t-4 border-teal-400">
               <h2 className="text-2xl font-bold text-teal-800 mb-3 flex items-center space-x-2 font-sans">
                 <span>Deine Punkte:</span>
                 {/* Numeric overall score with dynamic color */}
