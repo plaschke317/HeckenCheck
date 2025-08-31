@@ -225,15 +225,15 @@ function App() {
             className="object-contain cursor-pointer hover:scale-[1.05]"
             onClick={scrollToUpload}
           />
-        <h1 className="text-4xl font-extrabold text-center text-green-800 mb-6 flex items-center justify-center space-x-3 font-sans">
+        <h1 className="text-4xl font-extrabold text-center text-green-600 mb-6 flex items-center justify-center space-x-3 font-sans">
           <span><br/>Bud oder Blatt? <br/>Cali-Ott oder Straßenschrott?</span>
         </h1>
-        <h1 className="text-4xl font-extrabold text-center text-green-800 mb-6 flex items-center justify-center space-x-3 font-sans">
+        <h1 className="text-4xl font-extrabold text-center text-green-600 mb-6 flex items-center justify-center space-x-3 font-sans">
           <span>HeckenCheck klärt das!</span>
         </h1>
         {/* App description: text-gray-600 on dark background */}
         <p className="text-center text-gray-600 mb-8 mt-8 font-bold font-sans">
-          Sieht aus wie Bud, schmeckt aber nach Blatt? Cali-Quali, OG-Level oder Straßenott mit mehr Stängel als Wirkung – wir sagen dir, was Sache ist. Hecke zeigen. Bewertung kassieren. HeckenCheck regelt!
+          Sieht aus wie Bud, schmeckt aber nach Blatt? Cali-Quali, OG-Level oder Straßenott mit mehr Stängeln als Wirkung – wir sagen dir, was Sache ist. Hecke zeigen. Bewertung kassieren. HeckenCheck regelt!
         </p>
 
         {/* Image Upload Section */}
