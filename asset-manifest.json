@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/HeckenCheck/static/css/main.a52e2654.css",
-    "main.js": "/HeckenCheck/static/js/main.a3784920.js",
+    "main.js": "/HeckenCheck/static/js/main.bf03cb86.js",
     "static/js/453.d7337714.chunk.js": "/HeckenCheck/static/js/453.d7337714.chunk.js",
     "index.html": "/HeckenCheck/index.html",
     "main.a52e2654.css.map": "/HeckenCheck/static/css/main.a52e2654.css.map",
-    "main.a3784920.js.map": "/HeckenCheck/static/js/main.a3784920.js.map",
+    "main.bf03cb86.js.map": "/HeckenCheck/static/js/main.bf03cb86.js.map",
     "453.d7337714.chunk.js.map": "/HeckenCheck/static/js/453.d7337714.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a52e2654.css",
-    "static/js/main.a3784920.js"
+    "static/js/main.bf03cb86.js"
   ]
 }
