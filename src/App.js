@@ -175,8 +175,11 @@ function App() {
       return '🥦🥦🥦🥦🥦🥦🥦';
     } else if (score >= 8.0 && score <= 8.9) {
       return '🥦🥦🥦🥦🥦🥦🥦🥦';
-    } else if (score >= 9.0 && score <= 10.0) {
-      return '🥦🥦🥦🥦🥦🥦🥦🥦🥦'; // 9 Broccolis for almost high scores
+    } else if (score >= 9.0 && score <= 9.9) {
+      return '🥦🥦🥦🥦🥦🥦🥦🥦🥦'; // 9 Broccolis 
+    } else if (score = 10.0) {
+      return '🏆🥇🏆 HIGHSCORE 🏆🥇🏆'; // high score   
+   
     }
     return ''; // Default empty string
   };
@@ -274,19 +277,25 @@ function App() {
           >
             <option value="Normal">Normal</option>
             <option value="Diss">Diss</option>
-            <option value="Donald Trump">Donald Trump</option>
-            <option value="Harald Glööckler">Harald Glööckler</option>
             <option value="Polizei">Polizei</option>
             <option value="Wissenschaftler">Wissenschaftler</option>
             <option value="Kiffer">Kiffer</option>
-            <option value="Fritze Merz">Fritze Merz</option>
             <option value="Zoll">Zoll</option>
-            <option value="Growexperte">Growexperte</option>
             <option value="Schnorrer">Schnorrer</option>
-            <option value="Deine Mutter">Deine Mutter</option>
           </select>
         </div>
 
+{/* Styles coming soon
+          
+          
+          <option value="Deine Mutter">Deine Mutter</option>
+            <option value="Donald Trump">Donald Trump</option>
+            <option value="Harald Glööckler">Harald Glööckler</option>
+            <option value="Growexperte">Growexperte</option>
+            <option value="Fritze Merz">Fritze Merz</option>
+
+
+*/}
         {/* Action Button */}
         <button
           onClick={() => {generateRating(); setTimeout(scrollToRating, 1750);}}
